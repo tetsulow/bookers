@@ -1,8 +1,31 @@
-<h1>投稿一覧</h1>
+<h1>Books</h1>
 
-<%= @lists.each do |list| %>
+<% @lists.each do |list| %>
 
   <p>タイトル</p>
-  <span><%= list.title %></span>
+  <span> <%= link_to list.title,  list_path(list.id) %> </span>
+  <span> <%= link_to list.body,  list_path(list.id) %> </span>
+  <p
 
+<% end %>
+
+
+
+ <% if @list.errors.any? %>
+  <%= @list.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @list, url: '/lists', method: :post, local: true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
 <% end %>
