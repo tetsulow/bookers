@@ -2,9 +2,15 @@
 
 <% @lists.each do |list| %>
 
-  <p>タイトル</p>
-  <span> <%= link_to list.title,  list_path(list.id) %> </span>
-  <span> <%= link_to list.body,  list_path(list.id) %> </span>
+  <%= list.title %><br>
+  <%= list.body %>
+
+  <span> <%= link_to list.title='Show',  list_path(list.id) %> </span>
+  <span><%= link_to edit_list="Edit", edit_list_path(list.id)%></span>
+  <span><%= link_to destroy_list="Delete", destroy_list_path(list.id)%></span>
+
+
+
 
 
 <% end %>
@@ -21,11 +27,12 @@
 <% end %>
 
 <%= form_with model: @list, url: '/lists', method: :post, local: true do |f| %>
-  <h4>Title</h4>
+ <h4>New Book</h4>
+  <p>Title</p>
   <%= f.text_field :title %>
 
-  <h4>Body</h4>
+  <p>Body</p>
   <%= f.text_area :body %>
 
-  <%= f.submit 'Create Book' %>
+  <br><%= f.submit 'Create Book' %>
 <% end %>
