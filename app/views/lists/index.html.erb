@@ -1,19 +1,28 @@
 <h1>Books</h1>
+<table>
+ <thred>
+  <tr>
+   <th>Title</th>
+   <th>Body</th>
+   <th colspan="3"></th>
+  </tr>
+ </thred>
 
 <% @lists.each do |list| %>
 
-  <%= list.title %><br>
-  <%= list.body %>
+  <tr>
+   <tb><%= list.title %></tb>
+   <tb> <%= list.body %></tb>
 
-  <span> <%= link_to list.title='Show',  list_path(list.id) %> </span>
-  <span><%= link_to edit_list="Edit", edit_list_path(list.id)%></span>
-  <span><%= link_to destroy_list="Delete", destroy_list_path(list.id)%></span>
+   <tb><%= link_to list.title='Show',  list_path(list.id) %> </tb>
+   <tb><%= link_to edit_list="Edit", edit_list_path(list.id)%></tb>
+   <tb><%= link_to destroy_list="Delete", destroy_list_path(list.id)%></tb>
 
+  </tr>
+  <% end %>
 
+</table>
 
-
-
-<% end %>
 
 
 
