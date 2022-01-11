@@ -31,6 +31,10 @@ p{
 
 }
 
+#alert{
+  color: green;
+}
+
 table {
 
 }
@@ -54,3 +58,15 @@ tb{
 h2{
   margin: 10px auto;
 }
+
+.notifications {
+  color: white;
+  text-align: center;
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: alert_orange;
+  }

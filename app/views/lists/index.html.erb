@@ -1,6 +1,7 @@
+<p id="alert"><%= alert %></p>
 <h1>Books</h1>
 <table>
-  <thead>
+ <thead>
   <tr>
    <th>Title</th>
    <th>Body</th>
@@ -10,11 +11,11 @@
  <tbody>
   <% @lists.each do |list| %>
    <tr>
-    <tb><%= list.title %></tb>
-    <tb><%= list.body %></tb>
-    <tb><%= link_to list.title='Show',  show_list_path(list.id) %></tb>
-    <tb><%= link_to edit_list="Edit", edit_list_path(list.id)%></tb>
-    <tb><%= link_to edit_list="Delete", destroy_list_path(list.id)%></tb>
+    <td><%= list.title %></td>
+    <td><%= list.body %></td>
+    <td><%= link_to 'Show',  show_list_path(list.id) %></td>
+    <td><%= link_to 'Edit', edit_list_path(list.id)%></td>
+    <td><%= link_to "Delete", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %></td>
    </tr>
   <% end %>
  </tbody>
