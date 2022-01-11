@@ -1,26 +1,23 @@
 <h1>Books</h1>
 <table>
- <thred>
+  <thead>
   <tr>
    <th>Title</th>
    <th>Body</th>
    <th colspan="3"></th>
   </tr>
- </thred>
-
-<% @lists.each do |list| %>
-
-  <tr>
-   <tb><%= list.title %></tb>
-   <tb> <%= list.body %></tb>
-
-   <tb><%= link_to list.title='Show',  list_path(list.id) %> </tb>
-   <tb><%= link_to edit_list="Edit", edit_list_path(list.id)%></tb>
-   <tb><%= link_to destroy_list="Delete", destroy_list_path(list.id)%></tb>
-
-  </tr>
+ </thead>
+ <tbody>
+  <% @lists.each do |list| %>
+   <tr>
+    <tb><%= list.title %></tb>
+    <tb><%= list.body %></tb>
+    <tb><%= link_to list.title='Show',  show_list_path(list.id) %></tb>
+    <tb><%= link_to edit_list="Edit", edit_list_path(list.id)%></tb>
+    <tb><%= link_to edit_list="Delete", destroy_list_path(list.id)%></tb>
+   </tr>
   <% end %>
-
+ </tbody>
 </table>
 
 
@@ -36,11 +33,11 @@
 <% end %>
 
 <%= form_with model: @list, url: '/lists', method: :post, local: true do |f| %>
- <h4>New Book</h4>
-  <p>Title</p>
+ <h2>New Book</h2>
+  <div class="label">Title</div>
   <%= f.text_field :title %>
 
-  <p>Body</p>
+  <div class="label">Body</div>
   <%= f.text_area :body %>
 
   <br><%= f.submit 'Create Book' %>

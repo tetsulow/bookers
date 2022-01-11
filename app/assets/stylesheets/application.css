@@ -22,24 +22,24 @@
 }
 
 body{
-  margin: 30px;
+  margin: 40px;
   font-size: 13px;
 }
 
 p{
-  margin: 30px;
+  margin: 40px;
+
 }
 
 table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: grey;
-    border-collapse: separate;
-    text-indent: initial;
 
+}
+
+thead{
+
+}
+
+th{
 }
 
 
@@ -49,4 +49,8 @@ tr{
 
 tb{
 
+}
+
+h2{
+  margin: 10px auto;
 }
